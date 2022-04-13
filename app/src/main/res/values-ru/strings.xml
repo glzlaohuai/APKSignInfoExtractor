@@ -18,5 +18,6 @@
     <string name="send_title">отправить APK</string>
     <string name="search_hint">Введите содержимое для поиска</string>
     <string name="about_me">"Здравствуйте, спасибо вам за использование моего приложения, а также за ваше терпение к рекламе. wsliulifeng@qq.com , если у вас возникли какие - либо проблемы или предложения при использовании приложения. надеюсь, тебе понравится. ...</string>
+    <string name="action_view_signature">Информация о подписи</string>
 
 </resources>

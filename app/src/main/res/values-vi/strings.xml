@@ -18,5 +18,6 @@
     <string name="send_title">Gửi APK</string>
     <string name="search_hint">Kiểu tìm kiếm</string>
     <string name="about_me">"Chào, cảm ơn đã dùng ứng dụng của tôi và sự kiên nhẫn của bạn cho các quảng cáo. Vui lòng đừng ngần ngại liên lạc với tôi bằng cách để lại một bình luận hoặc email cho tôi wsliulifeng@qq.com nếu bạn có câu hỏi hay gợi ý nào trong khi dùng ứng dụng này. Hy vọng anh thích nó. "</string>
+    <string name="action_view_signature">Thông tin chữ ký</string>
 
 </resources>

@@ -18,5 +18,6 @@
     <string name="send_title">إرسال APK</string>
     <string name="search_hint">اكتب ما تريد البحث</string>
     <string name="about_me">" مرحبا ، شكرا لك على استخدام التطبيق الخاص بي ، فضلا عن صبركم مع الإعلانات . يرجى عدم التسرع في الاتصال بي عن طريق البريد الإلكتروني أو ترك رسالة . wsliulifeng@qq.com إذا كان لديك أي أسئلة أو اقتراحات حول استخدام التطبيق الخاص بك . آمل أن تكونوا مثل ذلك . س</string>
+    <string name="action_view_signature">معلومات التوقيع</string>
 
 </resources>

@@ -18,5 +18,6 @@
     <string name="send_title">APK verzenden</string>
     <string name="search_hint">Type om te zoeken</string>
     <string name="about_me">"Hallo, bedankt voor het gebruik van mijn app en uw geduld voor de advertenties. Aarzel niet om contact met me op te nemen door een reactie achter te laten of e-mail me wsliulifeng@qq.com Als u vragen of suggesties heeft tijdens het gebruik van de app. Ik hoop dat je ervan geniet. "</string>
+    <string name="action_view_signature">Handtekening informatie</string>
 
 </resources>

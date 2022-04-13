@@ -6,6 +6,7 @@
     <string name="tab_title_user_installed_apps">user apps</string>
     <string name="tab_title_system_apps">system apps</string>
     <string name="action_send">Send to</string>
+    <string name="action_view_signature">Signature Info</string>
     <string name="action_view_in_settings">In settings</string>
     <string name="action_view_in_store">In store</string>
 

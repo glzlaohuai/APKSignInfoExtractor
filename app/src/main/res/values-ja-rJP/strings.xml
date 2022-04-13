@@ -18,5 +18,6 @@
     <string name="send_title">APKの送信</string>
     <string name="search_hint">検索する型</string>
     <string name="about_me">「こんにちは、私のアプリと広告のためのあなたの忍耐を利用してくれてありがとう。コメントを残すか、私にメールすることによって私に連絡するために、hestitateしないでください wsliulifeng@qq.com あなたがアプリケーションを使用しているときに質問や提案がある場合。あなたがそれを楽しむ望み。"</string>
+    <string name="action_view_signature">署名情報</string>
 
 </resources>

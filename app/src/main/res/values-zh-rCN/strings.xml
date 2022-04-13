@@ -17,4 +17,5 @@
     <string name="app_version_name">版本名称：</string>
     <string name="search_hint">输入搜索内容</string>
     <string name="about_me">Hi，谢谢你使用我开发的app以及对其中所展示的广告的容忍。如果你在使用过程中有任何问题或者意见建议，欢迎随时通过评论留言或者使用邮件来联系我 wsliulifeng@qq.com</string>
+    <string name="action_view_signature">签名信息</string>
 </resources>

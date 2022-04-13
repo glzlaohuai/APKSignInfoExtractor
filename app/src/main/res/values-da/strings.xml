@@ -18,5 +18,6 @@
     <string name="send_title">Send APK</string>
     <string name="search_hint">Skriv at søge</string>
     <string name="about_me">"Hej, tak for at bruge min app og din tålmodighed for annoncerne. wsliulifeng@qq.com Hvis du har spørgsmål eller forslag, mens du bruger appen. Jeg håber, du nyder det. "</string>
+    <string name="action_view_signature">Signaturoplysninger</string>
 
 </resources>

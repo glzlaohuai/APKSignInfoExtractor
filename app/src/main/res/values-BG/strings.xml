@@ -18,5 +18,6 @@
     <string name="send_title">Изпращане на APK</string>
     <string name="search_hint">Тип за търсене</string>
     <string name="about_me">"Здравейте, благодаря ви, че използвате приложението ми и търпението си за рекламите.Моля, не hestite да се свържете с мен като оставите коментар или имейл wsliulifeng@qq.com , ако имате някакви въпроси или предложения, докато използвате приложението. Надявам се да ти хареса. "</string>
+    <string name="action_view_signature">Информация за подписа</string>
 
 </resources>
