@@ -1,6 +1,8 @@
 package com.badzzz.apksigninfoextractor.fragments;
 
+import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
@@ -25,6 +27,7 @@ import com.badzzz.apksigninfoextractor.utils.AppViewUtils;
 import com.badzzz.apksigninfoextractor.utils.AppsInfoHandler;
 import com.badzzz.apksigninfoextractor.utils.StorageUtils;
 import com.badzzz.apksigninfoextractor.utils.ToastUtils;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.io.File;
 import java.security.cert.X509Certificate;
@@ -250,7 +253,16 @@ public class AppListFragment extends Fragment implements MainActivity.ISearchTex
         }
 
         private void showSignature(String pkg) {
-            // TODO: 2022/4/14  
+            // TODO: 2022/4/14
+
+            new MaterialAlertDialogBuilder(getContext()).setTitle(R.string.action_view_signature).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                }
+            });
+
+
         }
     }
 }

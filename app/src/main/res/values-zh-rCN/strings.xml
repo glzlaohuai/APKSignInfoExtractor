@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">APK签名查看器</string>
     <string name="about">关于</string>
     <string name="rate">评价</string>
     <string name="no_apps_found">设备中没有安装应用</string>
