@@ -1,6 +1,8 @@
 package com.badzzz.apksigninfoextractor;
 
+import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.text.Editable;
@@ -8,14 +10,17 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 
-import com.badzzz.apkfileextractor.databinding.ActivityMainBinding;
-import com.badzzz.apkfileextractor.fragments.AppListFragment;
-import com.badzzz.apkfileextractor.utils.ADUtils;
-import com.badzzz.apkfileextractor.utils.AppViewUtils;
-import com.badzzz.apkfileextractor.utils.AppsInfoHandler;
-import com.badzzz.apkfileextractor.utils.ToastUtils;
+import com.badzzz.apksigninfoextractor.databinding.ActivityMainBinding;
+import com.badzzz.apksigninfoextractor.fragments.AppListFragment;
+import com.badzzz.apksigninfoextractor.utils.ADUtils;
+import com.badzzz.apksigninfoextractor.utils.AppViewUtils;
+import com.badzzz.apksigninfoextractor.utils.AppsInfoHandler;
+import com.badzzz.apksigninfoextractor.utils.ToastUtils;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.tabs.TabLayoutMediator;
 
@@ -53,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
         loadAppsList();
         setupComponents();
         ADUtils.setupBannerAD(this, binding.adContainer, Others.AD_UNIT_BANNER);
+
+        ADUtils.showInterstitialWithTimeout(this, Others.AD_UNIT_INTERSTITIAL, 3000);
     }
 
 
@@ -152,6 +159,26 @@ public class MainActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            try {
+                View v = getCurrentFocus();
+                if (v instanceof EditText) {
+                    Rect outRect = new Rect();
+                    v.getGlobalVisibleRect(outRect);
+                    if (!outRect.contains((int) event.getRawX(), (int) event.getRawY())) {
+                        v.clearFocus();
+                        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                        imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+                    }
+                }
+            } catch (Throwable e) {
+            }
+        }
+        return super.dispatchTouchEvent(event);
+    }
+
     public interface ISearchTextChangeListener {
         void onSearchTextChange(String text);
     }
@@ -180,5 +207,6 @@ public class MainActivity extends AppCompatActivity {
             return 2;
         }
     }
+
 
 }

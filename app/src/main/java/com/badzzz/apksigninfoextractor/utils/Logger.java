@@ -2,7 +2,8 @@ package com.badzzz.apksigninfoextractor.utils;
 
 import android.util.Log;
 
-import com.badzzz.apkfileextractor.BuildConfig;
+import com.badzzz.apksigninfoextractor.BuildConfig;
+
 
 public class Logger {
     private static String logPrefix = "Logger";

@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Apk-extractor</string>
+    <string name="about">Over</string>
+    <string name="rate">Tarief</string>
+    <string name="no_apps_found">Geen apps geïnstalleerd op uw telefoon.</string>
+    <string name="tab_title_user_installed_apps">gebruikersapps</string>
+    <string name="tab_title_system_apps">systeemapps</string>
+    <string name="action_send">Verzenden naar</string>
+    <string name="action_view_in_settings">In instellingen</string>
+    <string name="action_view_in_store">In de winkel</string>
+
+    <string name="app_version_code">versiecode:</string>
+    <string name="app_version_name">versienaam:</string>
+
+    <string name="open_play_store_failed">Kan de speelwinkel niet openen.</string>
+    <string name="open_settings_failed">Kan de app Instellingen niet openen.</string>
+    <string name="copy_file_failed">Verzenden mislukt, kopiëren apk bestand mislukt.</string>
+    <string name="send_title">APK verzenden</string>
+    <string name="search_hint">Type om te zoeken</string>
+    <string name="about_me">"Hallo, bedankt voor het gebruik van mijn app en uw geduld voor de advertenties. Aarzel niet om contact met me op te nemen door een reactie achter te laten of e-mail me wsliulifeng@qq.com Als u vragen of suggesties heeft tijdens het gebruik van de app. Ik hoop dat je ervan geniet. "</string>
+
+</resources>

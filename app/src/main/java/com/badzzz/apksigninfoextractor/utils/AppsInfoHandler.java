@@ -7,7 +7,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.badzzz.apkfileextractor.XApplication;
+import com.badzzz.apksigninfoextractor.XApplication;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,12 +19,61 @@ public class AppsInfoHandler {
 
     private final static ExecutorService singleThreadExecutor = Executors.newSingleThreadExecutor();
 
+    public static void getAllInstalledApps(AppsInfoHandlerListener listener) {
+        singleThreadExecutor.execute(() -> {
+                    List<AppInfo> result = getAllInstalledApps(XApplication.getInstance());
+                    listener.onAppsInfoHandler(result);
+                }
+        );
+    }
+
+    private final static List<AppInfo> getAllInstalledApps(Context context) {
+
+        PackageManager packageManager = context.getPackageManager();
+        List<ApplicationInfo> installedApplications = packageManager.getInstalledApplications(PackageManager.GET_META_DATA);
+
+        List<AppInfo> result = new ArrayList<>(installedApplications.size());
+
+        for (ApplicationInfo applicationInfo : installedApplications) {
+            boolean isSys = (applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) != 0;
+            String appName = applicationInfo.loadLabel(packageManager).toString();
+            String appPackage = applicationInfo.packageName;
+            int versinoCode = 0;
+            String versionName = null;
+
+            try {
+                versinoCode = packageManager.getPackageInfo(appPackage, 0).versionCode;
+                versionName = packageManager.getPackageInfo(appPackage, 0).versionName;
+            } catch (PackageManager.NameNotFoundException e) {
+                e.printStackTrace();
+            }
+
+            Drawable icon = applicationInfo.loadIcon(packageManager);
+
+            AppInfo appInfo = new AppInfo(isSys, appName, appPackage, versinoCode, versionName, icon);
+            result.add(appInfo);
+        }
+
+        return result;
+
+    }
 
     public interface AppsInfoHandlerListener {
         void onAppsInfoHandler(List<AppInfo> appsInfo);
     }
 
     public static class AppInfo implements Parcelable {
+        public static final Creator<AppInfo> CREATOR = new Creator<AppInfo>() {
+            @Override
+            public AppInfo createFromParcel(Parcel in) {
+                return new AppInfo(in);
+            }
+
+            @Override
+            public AppInfo[] newArray(int size) {
+                return new AppInfo[size];
+            }
+        };
         private boolean isSys;
         private String appName;
         private String appPackage;
@@ -48,18 +97,6 @@ public class AppsInfoHandler {
             versinoCode = in.readInt();
             versionName = in.readString();
         }
-
-        public static final Creator<AppInfo> CREATOR = new Creator<AppInfo>() {
-            @Override
-            public AppInfo createFromParcel(Parcel in) {
-                return new AppInfo(in);
-            }
-
-            @Override
-            public AppInfo[] newArray(int size) {
-                return new AppInfo[size];
-            }
-        };
 
         public boolean isSys() {
             return isSys;
@@ -108,46 +145,6 @@ public class AppsInfoHandler {
                 }
             }
         }
-    }
-
-    public static void getAllInstalledApps(AppsInfoHandlerListener listener) {
-        singleThreadExecutor.execute(() -> {
-                    List<AppInfo> result = getAllInstalledApps(XApplication.getInstance());
-                    listener.onAppsInfoHandler(result);
-                }
-        );
-    }
-
-
-    private final static List<AppInfo> getAllInstalledApps(Context context) {
-
-        PackageManager packageManager = context.getPackageManager();
-        List<ApplicationInfo> installedApplications = packageManager.getInstalledApplications(PackageManager.GET_META_DATA);
-
-        List<AppInfo> result = new ArrayList<>(installedApplications.size());
-
-        for (ApplicationInfo applicationInfo : installedApplications) {
-            boolean isSys = (applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) != 0;
-            String appName = applicationInfo.loadLabel(packageManager).toString();
-            String appPackage = applicationInfo.packageName;
-            int versinoCode = 0;
-            String versionName = null;
-
-            try {
-                versinoCode = packageManager.getPackageInfo(appPackage, 0).versionCode;
-                versionName = packageManager.getPackageInfo(appPackage, 0).versionName;
-            } catch (PackageManager.NameNotFoundException e) {
-                e.printStackTrace();
-            }
-
-            Drawable icon = applicationInfo.loadIcon(packageManager);
-
-            AppInfo appInfo = new AppInfo(isSys, appName, appPackage, versinoCode, versionName, icon);
-            result.add(appInfo);
-        }
-
-        return result;
-
     }
 
 

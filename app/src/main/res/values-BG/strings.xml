@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Apk Extractor</string>
+    <string name="about">Относно</string>
+    <string name="rate">Степен</string>
+    <string name="no_apps_found">Няма инсталирани приложения на телефона ти.</string>
+    <string name="tab_title_user_installed_apps">потребителски приложения</string>
+    <string name="tab_title_system_apps">системни приложения</string>
+    <string name="action_send">Изпращане до</string>
+    <string name="action_view_in_settings">В настройките</string>
+    <string name="action_view_in_store">В магазина</string>
+
+    <string name="app_version_code">код на версията:</string>
+    <string name="app_version_name">име на версията:</string>
+
+    <string name="open_play_store_failed">Не може да се отвори магазин за игри.</string>
+    <string name="open_settings_failed">Грешка при отваряне на приложението за настройки.</string>
+    <string name="copy_file_failed">Изпращането беше неуспешно, копирането на файла беше неуспешно.</string>
+    <string name="send_title">Изпращане на APK</string>
+    <string name="search_hint">Тип за търсене</string>
+    <string name="about_me">"Здравейте, благодаря ви, че използвате приложението ми и търпението си за рекламите.Моля, не hestite да се свържете с мен като оставите коментар или имейл wsliulifeng@qq.com , ако имате някакви въпроси или предложения, докато използвате приложението. Надявам се да ти хареса. "</string>
+
+</resources>

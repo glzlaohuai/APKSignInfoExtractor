@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Extracteur APK</string>
+    <string name="about">À propos de</string>
+    <string name="rate">Taux</string>
+    <string name="no_apps_found">Aucune application n\'est installée sur votre téléphone.</string>
+    <string name="tab_title_user_installed_apps">Application utilisateur</string>
+    <string name="tab_title_system_apps">Logiciel système</string>
+    <string name="action_send">Envoyé à</string>
+    <string name="action_view_in_settings">Dans la scène</string>
+    <string name="action_view_in_store">Dans les magasins</string>
+
+    <string name="app_version_code">Code de version:</string>
+    <string name="app_version_name">Nom de la version:</string>
+
+    <string name="open_play_store_failed">Impossible d\'ouvrir le magasin de jeux.</string>
+    <string name="open_settings_failed">Impossible d\'ouvrir l\'application de configuration.</string>
+    <string name="copy_file_failed">L\'envoi a échoué, la copie du fichier APK a échoué.</string>
+    <string name="send_title">Envoyer APK</string>
+    <string name="search_hint">Tapez ce que vous souhaitez rechercher</string>
+    <string name="about_me">"Bonjour, merci d'utiliser mon application et de votre patience avec la publicité. S'il vous plaît ne soyez pas pressé de me contacter par un message ou un e - mail wsliulifeng@qq.com , si vous avez des questions ou des suggestions lors de l'utilisation de l'application. J'espère que ça te plaît. ""</string>
+
+</resources>

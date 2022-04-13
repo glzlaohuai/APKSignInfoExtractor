@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Apk抽出器</string>
+    <string name="about">アバウト</string>
+    <string name="rate">率</string>
+    <string name="no_apps_found">いいえ、アプリは携帯電話にインストールされます。</string>
+    <string name="tab_title_user_installed_apps">ユーザーアプリ</string>
+    <string name="tab_title_system_apps">システムアプリ</string>
+    <string name="action_send">送付する</string>
+    <string name="action_view_in_settings">設定で</string>
+    <string name="action_view_in_store">インストア</string>
+
+    <string name="app_version_code">バージョンコード:</string>
+    <string name="app_version_name">バージョン名:</string>
+
+    <string name="open_play_store_failed">再生ストアを開くことができません。</string>
+    <string name="open_settings_failed">設定アプリを開くことができません。</string>
+    <string name="copy_file_failed">失敗した場合はコピーAPKファイルに失敗しました。</string>
+    <string name="send_title">APKの送信</string>
+    <string name="search_hint">検索する型</string>
+    <string name="about_me">「こんにちは、私のアプリと広告のためのあなたの忍耐を利用してくれてありがとう。コメントを残すか、私にメールすることによって私に連絡するために、hestitateしないでください wsliulifeng@qq.com あなたがアプリケーションを使用しているときに質問や提案がある場合。あなたがそれを楽しむ望み。"</string>
+
+</resources>

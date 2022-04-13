@@ -45,9 +45,7 @@ public class XApplication extends Application {
     }
 
     private void admobInit() {
-        // TODO: 2022/4/8 上线时候关闭
-        ADUtils.setIsForTest(true);
-
+        //        ADUtils.setIsForTest(true);
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {

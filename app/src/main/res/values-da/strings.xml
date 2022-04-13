@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Apk Extractor</string>
+    <string name="about">Om</string>
+    <string name="rate">Rate</string>
+    <string name="no_apps_found">Ingen apps installeret på din telefon.</string>
+    <string name="tab_title_user_installed_apps">brugerapps</string>
+    <string name="tab_title_system_apps">systemapps</string>
+    <string name="action_send">Send til</string>
+    <string name="action_view_in_settings">I indstillinger</string>
+    <string name="action_view_in_store">I lager</string>
+
+    <string name="app_version_code">versionskode:</string>
+    <string name="app_version_name">versionsnavn:</string>
+
+    <string name="open_play_store_failed">Kan ikke åbne afspilningsbutikken.</string>
+    <string name="open_settings_failed">Kan ikke åbne indstillingsappen.</string>
+    <string name="copy_file_failed">Send mislykkedes, kopiering af apk- fil mislykkedes.</string>
+    <string name="send_title">Send APK</string>
+    <string name="search_hint">Skriv at søge</string>
+    <string name="about_me">"Hej, tak for at bruge min app og din tålmodighed for annoncerne. wsliulifeng@qq.com Hvis du har spørgsmål eller forslag, mens du bruger appen. Jeg håber, du nyder det. "</string>
+
+</resources>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">APK提取</string>
+    <string name="about">关于</string>
+    <string name="rate">评价</string>
+    <string name="no_apps_found">设备中没有安装应用</string>
+    <string name="action_send">发送</string>
+    <string name="send_title">发送APK</string>
+    <string name="copy_file_failed">由于复制失败，发送文件失败</string>
+    <string name="tab_title_system_apps">系统应用</string>
+    <string name="open_play_store_failed">无法打开Play商店</string>
+    <string name="open_settings_failed">无法打开设置程序</string>
+    <string name="tab_title_user_installed_apps">用户应用</string>
+    <string name="app_version_code">版本：</string>
+    <string name="action_view_in_settings">设置中查看</string>
+    <string name="action_view_in_store">商店中查看</string>
+    <string name="app_version_name">版本名称：</string>
+    <string name="search_hint">输入搜索内容</string>
+    <string name="about_me">Hi，谢谢你使用我开发的app以及对其中所展示的广告的容忍。如果你在使用过程中有任何问题或者意见建议，欢迎随时通过评论留言或者使用邮件来联系我 wsliulifeng@qq.com</string>
+</resources>

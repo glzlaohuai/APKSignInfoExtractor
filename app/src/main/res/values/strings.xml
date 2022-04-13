@@ -1,3 +1,22 @@
 <resources>
-    <string name="app_name">APKSignInfoExtractor</string>
+    <string name="app_name">Apk Extractor</string>
+    <string name="about">About</string>
+    <string name="rate">Rate</string>
+    <string name="no_apps_found">No apps installed on your phone.</string>
+    <string name="tab_title_user_installed_apps">user apps</string>
+    <string name="tab_title_system_apps">system apps</string>
+    <string name="action_send">Send to</string>
+    <string name="action_view_in_settings">In settings</string>
+    <string name="action_view_in_store">In store</string>
+
+    <string name="app_version_code">version code:</string>
+    <string name="app_version_name">version name:</string>
+
+    <string name="open_play_store_failed">Unable to open play store.</string>
+    <string name="open_settings_failed">Unable to open settings app.</string>
+    <string name="copy_file_failed">Send failed, copy apk file failed.</string>
+    <string name="send_title">Send APK</string>
+    <string name="search_hint">Type to search</string>
+    <string name="about_me">"Hi, thanks for using my app and your patience for the ads. Please do not hestitate to contact me by leaving a comment or email me wsliulifeng@qq.com , if you have any questions or suggestions while using the app. Hope you enjoy it."</string>
+
 </resources>

@@ -41,11 +41,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class AppListFragment extends Fragment implements MainActivity.ISearchTextChangeListener {
 
-    private String TAG = "AppListFragment";
-
     public static final String KEY_APPS = "apps";
     public static final String KEY_SEARCH = "search";
-
+    private String TAG = "AppListFragment";
     private String searchText;
     private List<AppsInfoHandler.AppInfo> apps = new ArrayList<>();
 
@@ -111,11 +109,10 @@ public class AppListFragment extends Fragment implements MainActivity.ISearchTex
 
     class XAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-        private List<AppsInfoHandler.AppInfo> usedApps;
-        private List<AppsInfoHandler.AppInfo> allApps;
-
         private static final int VIEW_TYPE_EMPTY = 0;
         private static final int VIEW_TYPE_CONTENT = 1;
+        private List<AppsInfoHandler.AppInfo> usedApps;
+        private List<AppsInfoHandler.AppInfo> allApps;
 
         public XAdapter(List<AppsInfoHandler.AppInfo> apps, String searchText) {
             this.allApps = apps;
