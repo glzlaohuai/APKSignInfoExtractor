@@ -58,8 +58,7 @@ public class MainActivity extends AppCompatActivity {
         loadAppsList();
         setupComponents();
         ADUtils.setupBannerAD(this, binding.adContainer, Others.AD_UNIT_BANNER);
-
-        ADUtils.showInterstitialWithTimeout(this, Others.AD_UNIT_INTERSTITIAL, 3000);
+        ADUtils.showInterstitialWithTimeout(this, Others.AD_UNIT_INTERSTITIAL_LAUNCH, 5000);
     }
 
 

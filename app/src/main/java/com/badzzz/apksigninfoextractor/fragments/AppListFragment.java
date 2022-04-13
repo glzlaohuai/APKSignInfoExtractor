@@ -189,10 +189,10 @@ public class AppListFragment extends Fragment implements MainActivity.ISearchTex
         }
 
         private void showInterstitial() {
-            if (ADUtils.isInterstitialAvailable(Others.AD_UNIT_INTERSTITIAL)) {
-                ADUtils.showInterstitial(Others.AD_UNIT_INTERSTITIAL, getActivity());
+            if (ADUtils.isInterstitialAvailable(Others.AD_UNIT_INTERSTITIAL_VIEW)) {
+                ADUtils.showInterstitial(Others.AD_UNIT_INTERSTITIAL_VIEW, getActivity());
             }
-            ADUtils.loadInterstitial(getContext(), Others.AD_UNIT_INTERSTITIAL);
+            ADUtils.loadInterstitial(getContext(), Others.AD_UNIT_INTERSTITIAL_VIEW);
         }
 
         public void bind(AppsInfoHandler.AppInfo appInfo) {

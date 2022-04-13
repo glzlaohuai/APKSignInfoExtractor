@@ -51,7 +51,7 @@ public class XApplication extends Application {
             public void onInitializationComplete(InitializationStatus initializationStatus) {
             }
         });
-        ADUtils.loadInterstitial(this, Others.AD_UNIT_INTERSTITIAL);
+        ADUtils.loadInterstitial(this, Others.AD_UNIT_INTERSTITIAL_VIEW);
     }
 
 
