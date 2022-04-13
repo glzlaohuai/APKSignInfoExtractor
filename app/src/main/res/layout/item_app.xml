@@ -90,13 +90,13 @@
                         android:textSize="12sp" />
 
                     <com.google.android.material.button.MaterialButton
-                        android:id="@+id/button_send"
+                        android:id="@+id/button_sign_view"
                         style="?attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingLeft="0dp"
                         android:paddingRight="0dp"
-                        android:text="@string/action_send"
+                        android:text="@string/action_view_signature"
                         android:textSize="12sp" />
 
 

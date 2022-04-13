@@ -27,6 +27,7 @@ import com.badzzz.apksigninfoextractor.utils.StorageUtils;
 import com.badzzz.apksigninfoextractor.utils.ToastUtils;
 
 import java.io.File;
+import java.security.cert.X509Certificate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
@@ -201,50 +202,22 @@ public class AppListFragment extends Fragment implements MainActivity.ISearchTex
             binding.appIcon.setImageDrawable(appInfo.getIcon());
             binding.appVersionName.setText(appInfo.getVersionName());
 
-            binding.buttonSend.setOnClickListener(new View.OnClickListener() {
+            binding.buttonSignView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    String sourceAPKFile = APPUtils.getSourceAPKFile(XApplication.getInstance(), appInfo.getAppPackage());
-                    String dstFileName = appInfo.getAppPackage() + "." + appInfo.getVersionName() + ".apk";
-                    File rootDir = XApplication.getInstance().getFilesDir();
-                    rootDir = new File(rootDir, Others.SHARED_APKS_DIR);
-                    if (!rootDir.exists()) {
-                        rootDir.mkdirs();
-                    }
-                    File dstFile = new File(rootDir, dstFileName);
-                    AppListFragment.this.binding.loadingView.setVisibility(View.VISIBLE);
                     executors.execute(new Runnable() {
                         @Override
                         public void run() {
-                            boolean result = StorageUtils.copyFile(new File(sourceAPKFile), dstFile);
-
-                            binding.buttonSend.post(new Runnable() {
+                            binding.buttonSignView.post(new Runnable() {
                                 @Override
                                 public void run() {
-                                    AppListFragment.this.binding.loadingView.setVisibility(View.GONE);
-                                    if (result) {
-                                        Uri contentUri = FileProvider.getUriForFile(XApplication.getInstance(), Others.FILE_PROVIDER_AUTHORITH, dstFile);
-                                        Intent sharingIntent = new Intent(Intent.ACTION_SEND);
-                                        sharingIntent.setType("application/vnd.android.package-archive");
-                                        sharingIntent.putExtra(Intent.EXTRA_STREAM, contentUri);
-
-                                        List<ResolveInfo> resInfoList = XApplication.getInstance().getPackageManager().queryIntentActivities(sharingIntent, PackageManager.MATCH_DEFAULT_ONLY);
-                                        for (ResolveInfo resolveInfo : resInfoList) {
-                                            String packageName = resolveInfo.activityInfo.packageName;
-                                            XApplication.getInstance().grantUriPermission(packageName, contentUri, Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                                    showSignature(appInfo.getAppPackage());
+                                    binding.buttonSignView.postDelayed(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            showInterstitial();
                                         }
-                                        startActivity(Intent.createChooser(sharingIntent, getString(R.string.send_title)));
-
-                                        //delay show interstitial ad
-                                        binding.buttonSend.postDelayed(new Runnable() {
-                                            @Override
-                                            public void run() {
-                                                showInterstitial();
-                                            }
-                                        }, 500);
-                                    } else {
-                                        ToastUtils.shortToast(getContext(), R.string.copy_file_failed);
-                                    }
+                                    }, 500);
                                 }
                             });
                         }
@@ -274,6 +247,10 @@ public class AppListFragment extends Fragment implements MainActivity.ISearchTex
                     }
                 }
             });
+        }
+
+        private void showSignature(String pkg) {
+            // TODO: 2022/4/14  
         }
     }
 }
