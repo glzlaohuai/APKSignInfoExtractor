@@ -41,7 +41,7 @@ public class XApplication extends Application {
     private void initFlurry() {
         new FlurryAgent.Builder()
                 .withLogEnabled(true)
-                .build(this, "VSP23VSBJ5M3RRVKY5BG");
+                .build(this, "ST9BPB97YSCF3P5MC77B");
     }
 
     private void admobInit() {
