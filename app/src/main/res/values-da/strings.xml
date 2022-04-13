@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Apk Extractor</string>
+    <string name="app_name">APK Signature Viewer</string>
     <string name="about">Om</string>
     <string name="rate">Rate</string>
     <string name="no_apps_found">Ingen apps installeret på din telefon.</string>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Apk提取器</string>
+    <string name="app_name">APK 簽名查看器</string>
     <string name="about">關於</string>
     <string name="rate">评价</string>
     <string name="no_apps_found">你的手機上沒有安裝應用程序。</string>

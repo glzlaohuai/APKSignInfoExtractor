@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Extracteur APK</string>
+    <string name="app_name">Lecteur de signatures APK</string>
     <string name="about">À propos de</string>
     <string name="rate">Taux</string>
     <string name="no_apps_found">Aucune application n\'est installée sur votre téléphone.</string>

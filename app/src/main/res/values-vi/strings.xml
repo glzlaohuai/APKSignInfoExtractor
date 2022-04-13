@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Rút Phi</string>
+    <string name="app_name">Trình xem chữ ký APK</string>
     <string name="about">Về</string>
     <string name="rate">Điểm</string>
     <string name="no_apps_found">Không cài ứng dụng vào điện thoại.</string>

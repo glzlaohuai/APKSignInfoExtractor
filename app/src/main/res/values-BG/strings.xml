@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Apk Extractor</string>
+    <string name="app_name">APK Signature Viewer</string>
     <string name="about">Относно</string>
     <string name="rate">Степен</string>
     <string name="no_apps_found">Няма инсталирани приложения на телефона ти.</string>

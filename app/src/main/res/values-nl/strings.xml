@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Apk-extractor</string>
+    <string name="app_name">APK-handtekeningviewer</string>
     <string name="about">Over</string>
     <string name="rate">Tarief</string>
     <string name="no_apps_found">Geen apps geïnstalleerd op uw telefoon.</string>

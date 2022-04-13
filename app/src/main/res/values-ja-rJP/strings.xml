@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Apk抽出器</string>
+    <string name="app_name">APK署名ビューア</string>
     <string name="about">アバウト</string>
     <string name="rate">率</string>
     <string name="no_apps_found">いいえ、アプリは携帯電話にインストールされます。</string>

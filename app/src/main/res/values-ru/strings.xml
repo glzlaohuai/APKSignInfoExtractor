@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">АПК - экстрактор</string>
+    <string name="app_name">Средство просмотра подписи APK</string>
     <string name="about">О</string>
     <string name="rate">скорость</string>
     <string name="no_apps_found">на вашем телефоне нет установленных приложений.</string>

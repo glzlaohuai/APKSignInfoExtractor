@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Apk-Extraktor</string>
+    <string name="app_name">APK-Signatur-Viewer</string>
     <string name="about">Über uns</string>
     <string name="rate">Rate</string>
     <string name="no_apps_found">Keine Apps auf Ihrem Telefon installiert.</string>
