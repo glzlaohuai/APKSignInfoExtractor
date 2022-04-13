@@ -5,7 +5,7 @@
     <string name="no_apps_found">No apps installed on your phone.</string>
     <string name="tab_title_user_installed_apps">user apps</string>
     <string name="tab_title_system_apps">system apps</string>
-    <string name="action_send">Send to</string>
+    <string name="action_send">Send</string>
     <string name="action_view_signature">Signature Info</string>
     <string name="action_view_in_settings">In settings</string>
     <string name="action_view_in_store">In store</string>
@@ -19,6 +19,7 @@
     <string name="send_title">Send APK</string>
     <string name="search_hint">Type to search</string>
     <string name="about_me">"Hi, thanks for using my app and your patience for the ads. Please do not hestitate to contact me by leaving a comment or email me wsliulifeng@qq.com , if you have any questions or suggestions while using the app. Hope you enjoy it."</string>
+    <string name="action_copy">Copy</string>
 
 
 </resources>

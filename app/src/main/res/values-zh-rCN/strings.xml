@@ -4,7 +4,7 @@
     <string name="rate">评价</string>
     <string name="no_apps_found">设备中没有安装应用</string>
     <string name="action_send">发送</string>
-    <string name="send_title">发送APK</string>
+    <string name="send_title">发送</string>
     <string name="copy_file_failed">由于复制失败，发送文件失败</string>
     <string name="tab_title_system_apps">系统应用</string>
     <string name="open_play_store_failed">无法打开Play商店</string>
@@ -17,4 +17,5 @@
     <string name="search_hint">输入搜索内容</string>
     <string name="about_me">Hi，谢谢你使用我开发的app以及对其中所展示的广告的容忍。如果你在使用过程中有任何问题或者意见建议，欢迎随时通过评论留言或者使用邮件来联系我 wsliulifeng@qq.com</string>
     <string name="action_view_signature">签名信息</string>
+    <string name="action_copy">复制</string>
 </resources>

@@ -255,14 +255,17 @@ public class AppListFragment extends Fragment implements MainActivity.ISearchTex
         private void showSignature(String pkg) {
             // TODO: 2022/4/14
 
-            new MaterialAlertDialogBuilder(getContext()).setTitle(R.string.action_view_signature).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            new MaterialAlertDialogBuilder(getContext()).setTitle(R.string.action_view_signature).setPositiveButton(R.string.action_send, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     dialog.dismiss();
                 }
-            });
+            }).setNegativeButton(R.string.action_copy, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
 
-
+                }
+            }).show();
         }
     }
 }

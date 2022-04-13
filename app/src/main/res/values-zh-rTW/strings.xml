@@ -5,7 +5,7 @@
     <string name="no_apps_found">你的手機上沒有安裝應用程序。</string>
     <string name="tab_title_user_installed_apps">用戶軟體</string>
     <string name="tab_title_system_apps">系統軟體</string>
-    <string name="action_send">發送到</string>
+    <string name="action_send">發送</string>
     <string name="action_view_in_settings">在設定中</string>
     <string name="action_view_in_store">在商店裏</string>
 
@@ -19,5 +19,6 @@
     <string name="search_hint">鍵入要搜索的內容</string>
     <string name="about_me">您好，感謝您使用我的app，以及您對廣告的耐心。如果您在使用應用程序時有任何問題或建議, 請通過留言或電子郵件與我聯系 wsliulifeng@qq.com</string>
     <string name="action_view_signature">簽名信息</string>
+    <string name="action_copy">複製</string>
 
 </resources>
