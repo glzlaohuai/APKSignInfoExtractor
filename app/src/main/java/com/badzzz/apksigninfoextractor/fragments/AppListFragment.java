@@ -1,12 +1,7 @@
 package com.badzzz.apksigninfoextractor.fragments;
 
-import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.text.TextUtils;
@@ -25,11 +20,9 @@ import com.badzzz.apksigninfoextractor.utils.ADUtils;
 import com.badzzz.apksigninfoextractor.utils.APPUtils;
 import com.badzzz.apksigninfoextractor.utils.AppViewUtils;
 import com.badzzz.apksigninfoextractor.utils.AppsInfoHandler;
-import com.badzzz.apksigninfoextractor.utils.StorageUtils;
 import com.badzzz.apksigninfoextractor.utils.ToastUtils;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
-import java.io.File;
 import java.security.cert.X509Certificate;
 import java.util.ArrayList;
 import java.util.List;
@@ -38,7 +31,6 @@ import java.util.concurrent.Executors;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -255,17 +247,34 @@ public class AppListFragment extends Fragment implements MainActivity.ISearchTex
         private void showSignature(String pkg) {
             // TODO: 2022/4/14
 
-            new MaterialAlertDialogBuilder(getContext()).setTitle(R.string.action_view_signature).setPositiveButton(R.string.action_send, new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    dialog.dismiss();
-                }
-            }).setNegativeButton(R.string.action_copy, new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
+            X509Certificate certificate = APPUtils.getAppSignature(XApplication.getInstance(), pkg);
 
-                }
-            }).show();
+            if (certificate == null) {
+                ToastUtils.shortToast(getContext(), "error");
+            } else {
+                String md5 = APPUtils.sign(certificate.getSignature(), APPUtils.DigestAlgorithmType.MD5);
+                String sh1 = APPUtils.sign(certificate.getSignature(), APPUtils.DigestAlgorithmType.SHA1);
+                String sha256 = APPUtils.sign(certificate.getSignature(), APPUtils.DigestAlgorithmType.SHA256);
+
+                StringBuilder sb = new StringBuilder();
+
+
+                sb.append("md5: " + md5 + "\n");
+                sb.append("sha1: " + sh1 + "\n");
+                sb.append("sha256: " + sha256 + "\n");
+
+                new MaterialAlertDialogBuilder(getContext()).setTitle(R.string.action_view_signature).setMessage(sb.toString()).setPositiveButton(R.string.action_send, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                }).setNegativeButton(R.string.action_copy, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                }).show();
+            }
         }
     }
 }
