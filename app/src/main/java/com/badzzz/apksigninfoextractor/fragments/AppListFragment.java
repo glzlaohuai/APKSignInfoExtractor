@@ -208,8 +208,8 @@ public class AppListFragment extends Fragment implements MainActivity.ISearchTex
                             binding.buttonSignView.post(new Runnable() {
                                 @Override
                                 public void run() {
-                                    showSignature(appInfo);
                                     showInterstitial();
+                                    showSignature(appInfo);
                                 }
                             });
                         }
