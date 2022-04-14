@@ -25,5 +25,8 @@
     <string name="sign_serial_number">Serial Number:</string>
     <string name="sign_valid_date">Valid Date:</string>
     <string name="sign_certificate_fingerprints">Fingerprints:</string>
+    <string name="copy_failed">Copy failed.</string>
+    <string name="title_appname">App Name:</string>
+    <string name="title_pkg">Package Name:</string>
 
 </resources>

@@ -23,4 +23,8 @@
     <string name="sign_serial_number">序列号：</string>
     <string name="sign_valid_date">有效期：</string>
     <string name="sign_certificate_fingerprints">指纹：</string>
+    <string name="app_name">APK签名查看器</string>
+    <string name="copy_failed">复制失败</string>
+    <string name="title_appname">应用名：</string>
+    <string name="title_pkg">包名：</string>
 </resources>

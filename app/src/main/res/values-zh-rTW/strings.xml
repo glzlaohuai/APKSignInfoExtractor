@@ -25,5 +25,8 @@
     <string name="sign_serial_number">序號:</string>
     <string name="sign_valid_date">有效期：</string>
     <string name="sign_certificate_fingerprints">指紋:</string>
+    <string name="copy_failed">複製失敗</string>
+    <string name="title_appname">應用名：</string>
+    <string name="title_pkg">包名：</string>
 
 </resources>
