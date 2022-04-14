@@ -3,7 +3,6 @@ package com.badzzz.apksigninfoextractor.utils;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.content.pm.Signature;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
@@ -22,23 +21,30 @@ public class APPUtils {
         return null;
     }
 
-    public static X509Certificate getAppSignature(Context context, String pkg) {
+    public static X509Certificate generateCertificate(byte[] bytes) {
         try {
-            PackageInfo packageInfo = context.getPackageManager().getPackageInfo(pkg, PackageManager.GET_SIGNATURES);
-            Signature[] signatures = packageInfo.signatures;
-            if (signatures != null && signatures.length > 0) {
-                byte[] bytes = signatures[0].toByteArray();
-                InputStream certStream = new ByteArrayInputStream(bytes);
-                CertificateFactory certFactory = CertificateFactory.getInstance("X509");
-                X509Certificate x509Cert = (X509Certificate) certFactory.generateCertificate(certStream);
+            InputStream certStream = new ByteArrayInputStream(bytes);
+            CertificateFactory certFactory = CertificateFactory.getInstance("X509");
+            X509Certificate x509Cert = (X509Certificate) certFactory.generateCertificate(certStream);
 
-                return x509Cert;
-            }
+            return x509Cert;
         } catch (Throwable throwable) {
             throwable.printStackTrace();
         }
         return null;
     }
+
+
+    public static byte[] getAppSignatureBytes(Context context, String pkg) {
+        try {
+            PackageInfo packageInfo = context.getPackageManager().getPackageInfo(pkg, PackageManager.GET_SIGNATURES);
+            return packageInfo.signatures[0].toByteArray();
+        } catch (Throwable e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 
     public enum DigestAlgorithmType {
         MD5, SHA1, SHA256
@@ -75,7 +81,7 @@ public class APPUtils {
             e.printStackTrace();
         }
 
-        return toRet.toString();
+        return toRet.toString().toUpperCase();
     }
 
 

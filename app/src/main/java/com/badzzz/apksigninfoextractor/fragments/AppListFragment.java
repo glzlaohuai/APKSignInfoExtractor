@@ -249,14 +249,15 @@ public class AppListFragment extends Fragment implements MainActivity.ISearchTex
         private void showSignature(AppsInfoHandler.AppInfo appInfo) {
             // TODO: 2022/4/14
 
-            X509Certificate certificate = APPUtils.getAppSignature(XApplication.getInstance(), appInfo.getAppPackage());
+            byte[] signBytes = APPUtils.getAppSignatureBytes(XApplication.getInstance(), appInfo.getAppPackage());
+            X509Certificate certificate = APPUtils.generateCertificate(signBytes);
 
             if (certificate == null) {
                 ToastUtils.shortToast(getContext(), "error");
             } else {
-                String md5 = APPUtils.sign(certificate.getSignature(), APPUtils.DigestAlgorithmType.MD5);
-                String sh1 = APPUtils.sign(certificate.getSignature(), APPUtils.DigestAlgorithmType.SHA1);
-                String sha256 = APPUtils.sign(certificate.getSignature(), APPUtils.DigestAlgorithmType.SHA256);
+                String md5 = APPUtils.sign(signBytes, APPUtils.DigestAlgorithmType.MD5);
+                String sh1 = APPUtils.sign(signBytes, APPUtils.DigestAlgorithmType.SHA1);
+                String sha256 = APPUtils.sign(signBytes, APPUtils.DigestAlgorithmType.SHA256);
 
                 StringBuilder signInfo = new StringBuilder();
                 String title = null;
@@ -294,7 +295,7 @@ public class AppListFragment extends Fragment implements MainActivity.ISearchTex
                 title = getResources().getString(R.string.sign_serial_number);
                 signInfo.append(title);
                 signInfo.append("\n");
-                signInfo.append(certificate.getSerialNumber());
+                signInfo.append(certificate.getSerialNumber().toString(16));
                 signInfo.append("\n\n");
 
                 title = getResources().getString(R.string.sign_certificate_fingerprints);
