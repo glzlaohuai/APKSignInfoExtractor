@@ -18,4 +18,9 @@
     <string name="about_me">Hi，谢谢你使用我开发的app以及对其中所展示的广告的容忍。如果你在使用过程中有任何问题或者意见建议，欢迎随时通过评论留言或者使用邮件来联系我 wsliulifeng@qq.com</string>
     <string name="action_view_signature">签名信息</string>
     <string name="action_copy">复制</string>
+    <string name="sign_owner">所有者：</string>
+    <string name="sign_issuer">发布者：</string>
+    <string name="sign_serial_number">序列号：</string>
+    <string name="sign_valid_date">有效期：</string>
+    <string name="sign_certificate_fingerprints">指纹：</string>
 </resources>

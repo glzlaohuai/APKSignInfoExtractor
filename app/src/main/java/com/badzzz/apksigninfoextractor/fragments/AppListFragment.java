@@ -257,11 +257,38 @@ public class AppListFragment extends Fragment implements MainActivity.ISearchTex
                 String sha256 = APPUtils.sign(certificate.getSignature(), APPUtils.DigestAlgorithmType.SHA256);
 
                 StringBuilder sb = new StringBuilder();
+                String title = null;
 
+                title = getResources().getString(R.string.sign_owner);
+                sb.append(title);
+                sb.append("\n");
+                sb.append(certificate.getSubjectDN());
+                sb.append("\n\n");
 
-                sb.append("md5: " + md5 + "\n");
-                sb.append("sha1: " + sh1 + "\n");
-                sb.append("sha256: " + sha256 + "\n");
+                title = getResources().getString(R.string.sign_issuer);
+                sb.append(title);
+                sb.append("\n");
+                sb.append(certificate.getIssuerDN());
+                sb.append("\n\n");
+
+                title = getResources().getString(R.string.sign_valid_date);
+                sb.append(title);
+                sb.append("\n");
+                sb.append(certificate.getNotBefore() + " - " + certificate.getNotAfter());
+                sb.append("\n\n");
+
+                title = getResources().getString(R.string.sign_serial_number);
+                sb.append(title);
+                sb.append("\n");
+                sb.append(certificate.getSerialNumber());
+                sb.append("\n\n");
+
+                title = getResources().getString(R.string.sign_certificate_fingerprints);
+                sb.append(title);
+                sb.append("\n");
+                sb.append("MD5: \n" + md5 + "\n");
+                sb.append("SHA1: \n" + sh1 + "\n");
+                sb.append("SHA256: \n" + sha256 + "\n");
 
                 new MaterialAlertDialogBuilder(getContext()).setTitle(R.string.action_view_signature).setMessage(sb.toString()).setPositiveButton(R.string.action_send, new DialogInterface.OnClickListener() {
                     @Override
