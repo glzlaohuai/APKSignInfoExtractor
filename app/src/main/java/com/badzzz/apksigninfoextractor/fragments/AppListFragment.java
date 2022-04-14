@@ -209,12 +209,7 @@ public class AppListFragment extends Fragment implements MainActivity.ISearchTex
                                 @Override
                                 public void run() {
                                     showSignature(appInfo);
-                                    binding.buttonSignView.postDelayed(new Runnable() {
-                                        @Override
-                                        public void run() {
-                                            showInterstitial();
-                                        }
-                                    }, 500);
+                                    showInterstitial();
                                 }
                             });
                         }
@@ -247,8 +242,6 @@ public class AppListFragment extends Fragment implements MainActivity.ISearchTex
         }
 
         private void showSignature(AppsInfoHandler.AppInfo appInfo) {
-            // TODO: 2022/4/14
-
             byte[] signBytes = APPUtils.getAppSignatureBytes(XApplication.getInstance(), appInfo.getAppPackage());
             X509Certificate certificate = APPUtils.generateCertificate(signBytes);
 
