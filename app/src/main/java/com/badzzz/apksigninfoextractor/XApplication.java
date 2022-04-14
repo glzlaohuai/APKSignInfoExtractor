@@ -1,6 +1,7 @@
 package com.badzzz.apksigninfoextractor;
 
 import android.app.Application;
+import android.content.Context;
 
 import com.badzzz.apksigninfoextractor.utils.ADUtils;
 import com.flurry.android.FlurryAgent;
@@ -12,6 +13,8 @@ import java.io.File;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import androidx.multidex.MultiDex;
+
 public class XApplication extends Application {
 
     private static final String TAG = "XApplication";
@@ -21,6 +24,14 @@ public class XApplication extends Application {
 
     public static XApplication getInstance() {
         return instance;
+    }
+
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+
+        MultiDex.install(this);
     }
 
     @Override

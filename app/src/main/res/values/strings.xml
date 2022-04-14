@@ -28,5 +28,6 @@
     <string name="copy_failed">Copy failed.</string>
     <string name="title_appname">App Name:</string>
     <string name="title_pkg">Package Name:</string>
+    <string name="copied">App\'s signature info is copied!</string>
 
 </resources>

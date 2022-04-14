@@ -311,6 +311,8 @@ public class AppListFragment extends Fragment implements MainActivity.ISearchTex
                         boolean result = ClipUtils.copy(XApplication.getInstance(), signInfo.toString());
                         if (!result) {
                             ToastUtils.shortToast(getContext(), R.string.copy_file_failed);
+                        } else {
+                            ToastUtils.shortToast(getContext(), R.string.copied);
                         }
                     }
                 }).show();
