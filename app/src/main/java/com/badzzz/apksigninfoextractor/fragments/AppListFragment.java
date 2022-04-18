@@ -126,7 +126,7 @@ public class AppListFragment extends Fragment implements MainActivity.ISearchTex
                 text = text.toLowerCase();
                 List<AppsInfoHandler.AppInfo> result = new ArrayList<>();
                 for (AppsInfoHandler.AppInfo app : allApps) {
-                    if (app.getAppName().toLowerCase().contains(text) || app.getAppPackage().toLowerCase().contains(text) || app.getVersionName().toLowerCase().contains(text)) {
+                    if (app.getAppName().toLowerCase().contains(text) || app.getAppPackage().toLowerCase().contains(text) || (app.getVersionName() != null && app.getVersionName().toLowerCase().contains(text))) {
                         result.add(app);
                     }
                 }
